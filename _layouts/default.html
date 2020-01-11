@@ -14,6 +14,33 @@
     	{% include analytics.html %}
     </head>
 	<body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-black w3-card">
+                <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="/social" class="w3-bar-item w3-button">Social</a>
+                        <a href="/publications" class="w3-bar-item w3-button">Publications</a>
+                        <a href="/resume" class="w3-bar-item w3-button">Resume</a>
+                    </div>
+                </div>
+                <a href="/projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
+                <a href="/blog" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BLOG</a>
+                <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
+            </div>
+        </div>
+
+        <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+        <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+            <a href="/" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">HOME</a>
+            <a href="/blog" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BLOG</a>
+            <a href="/projects" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PROJECTS</a>
+            <a href="/social" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">SOCIAL</a>
+            <a href="/publications" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PUBLICATIONS</a>
+            <a href="/resume" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">RESUME</a>
+        </div>
         {{ content }}
         <!-- Footer -->
         <footer class="w3-container w3-padding-16 w3-center w3-light-grey w3-xlarge">
@@ -22,5 +49,17 @@
             <i class="fa fa-linkedin w3-hover-opacity"></i>
             <p class="w3-medium">&copy; Michael Riedl 2019</p>
         </footer>
+        
+        <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        </script>
 	</body>
 </html>
