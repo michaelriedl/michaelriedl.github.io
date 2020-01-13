@@ -2,46 +2,69 @@
 layout: projects
 title: Morty GAN
 ---
-
 <!-- Load TensorFlow.js -->
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
 
 <!-- Main script for generating new Morty image -->
 <script>
     
+    //----- Define model loading function -----
+    function loadModel(){
+        let model = tf.loadLayersModel('https://tmtrcreations.com/assets/Aug21.json/model.json');
+        
+        return model;
+    }
+    
     //----- Define image generation function -----
-    function genImage(){
+    function genImage(model){
         // Debug statement
         console.log("Inside genImage");
-        // Load the model
-        tf.loadModel('https://tmtrcreations.com/assets/files/Aug21.json/model.json').then(function(model){
-                                                                                    
-            // Debug statement
-            console.log("Loaded model");
-            
-            // Create noise to generate a Morty image
-            noise = tf.randomNormal([1, 100]);
-            
-            // Create the image
-            img = model.predict(noise);
+        
+        // Create noise to generate a Morty image
+        let noise = tf.randomNormal([1, 100]);
+
+        // Create the image and clean up memory
+        let img_final = tf.tidy(() => {
+            // Predict
+            let img = model.predict(noise);
             
             // Debug statement
             console.log(img);
-                                                                                    
-            // Resize the image
-            img = img.as3D(160,160,3)
-            
-            // Display the image
-            tf.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
-                // Debug statement
-                console.log("Displayed")
-            });
 
+            // Resize and scale the image
+            img = img.as3D(160,160,3);
+            img = img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32');
+            
+            return img;
         });
+        
+        // Get the canvas for displaying
+        let canvas = document.getElementsByTagName("canvas")[0]
+
+        // Display the image
+        tf.browser.toPixels(img_final, canvas).then(function(){
+            // Debug statement
+            console.log("Displayed");
+            // Clean up the tenosr
+            tf.dispose(img_final);
+            tf.dispose(noise);
+            // Debug statement
+            console.log(tf.memory());
+        });
+
     }
 
-    // Generate a new Morty image
-    genImage();
+    // Load the model
+    var model = null
+    promise = loadModel();
+    promise.then(function(value){
+        // Debug statement
+        console.log("Model loaded");
+        // Assign the model variable
+        model = value;
+        // Generate a new Morty image
+        genImage(model);
+    });
 
 </script>
 
