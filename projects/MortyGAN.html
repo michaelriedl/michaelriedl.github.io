@@ -1,0 +1,54 @@
+---
+layout: projects
+title: Morty GAN
+---
+
+<!-- Load TensorFlow.js -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+
+<!-- Main script for generating new Morty image -->
+<script>
+    
+    //----- Define image generation function -----
+    function genImage(){
+        // Debug statement
+        console.log("Inside genImage");
+        // Load the model
+        tf.loadModel('https://tmtrcreations.com/assets/Aug21.json/model.json').then(function(model){
+                                                                                    
+            // Debug statement
+            console.log("Loaded model");
+            
+            // Create noise to generate a Morty image
+            noise = tf.randomNormal([1, 100]);
+            
+            // Create the image
+            img = model.predict(noise);
+            
+            // Debug statement
+            console.log(img);
+                                                                                    
+            // Resize the image
+            img = img.as3D(160,160,3)
+            
+            // Display the image
+            tf.toPixels(img.clipByValue(0,1).mul(tf.scalar(255)).cast('int32'), document.getElementsByTagName("canvas")[0]).then(function(){
+                // Debug statement
+                console.log("Displayed")
+            });
+
+        });
+    }
+
+    // Generate a new Morty image
+    genImage();
+
+</script>
+
+<div class="w3-row w3-padding-32">
+    <h1 class="w3-wide">Morty GAN</h1>
+    <p>The image can take a while depending on OS and internet speed.</p>
+    <canvas height="120" width="120"></canvas>
+    <br>
+    <button onclick="genImage()" type="button">Generate New Morty!</button>
+</div>
