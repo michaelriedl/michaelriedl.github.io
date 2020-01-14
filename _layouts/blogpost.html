@@ -5,9 +5,11 @@ layout: default
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
     
     <!-- About the Site -->
-    <div class="w3-container w3-content w3-justify w3-padding-64" style="max-width:800px">
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
         <h1 class="w3-wide">{{ page.title }}</h1>
         <h3 class="w3-wide">{{ page.date | date_to_string }}</h3>
-        {{ content }}
+        <div class="w3-container w3-content w3-justify w3-padding-64" style="max-width:800px">
+            {{ content }}
+        </div>
     </div>
 </div>
