@@ -6,7 +6,9 @@ tags: drone electronics
 description: "Got the parts to build a drone for Xmas!"
 ---
 
-<img src="https://s3.amazonaws.com/assets.flitetest.com/article_images/full/bat-bone-1-jpg_1371693745.jpg" alt="BatBone" width="200">
+<p align="center">
+    <img src="https://s3.amazonaws.com/assets.flitetest.com/article_images/full/bat-bone-1-jpg_1371693745.jpg" alt="BatBone" width="400">
+</p>
 
 # First Step: Get the Parts
 
