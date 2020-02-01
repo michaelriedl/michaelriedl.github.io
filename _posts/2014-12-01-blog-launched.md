@@ -8,4 +8,4 @@ description: "Quick blurb about the blog."
 
 # Launching the blog!
 
-Today we are launching our blog. The goal of this blog is to provide fun updates on the projects we are working on as well as document the lessons we learn along the way. We intend to cover both hardware and software projects. The hardware projects will mostly focus on embedded Linux projects tailored to the Raspberry Pi family of devices. The software projects will most likely involve computer vision and machine learning projects.
+Today I am launching my blog. The point of this blog is to keep track of and share the projects I am working on. I also want to document lessons learned along the way in hopes that someone else can benefit from the things I've learned. The projects will range from electronics, programming, machine learning, and even home improvement.
