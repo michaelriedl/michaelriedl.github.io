@@ -2,7 +2,7 @@
 layout: blogpost
 title: "PokeGAN"
 date: 2018-04-28
-tags: programming deep-learning
+tags: programming "deep-learning"
 description: "Generative Adversarial Network (GAN) for Pokemon generation."
 ---
 
