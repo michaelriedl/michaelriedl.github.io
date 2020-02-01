@@ -37,30 +37,16 @@ title: Michael Riedl
             <h3 class="w3-wide w3-center">RECENT BLOG POSTS</h3>
             
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+                {% for post in site.posts limit:3 %}
                 <div class="w3-third w3-margin-bottom">
                     <div class="w3-container w3-white">
-                        <p><b>Dining Set Restoration</b></p>
-                        <p class="w3-opacity">17 Aug 2019</p>
-                        <p class="blog-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                        <p><b>{{ post.title }}</b></p>
+                        <p class="w3-opacity">{{ post.date | date: '%Y %b' }}</p>
+                        <p class="blog-desc">{{ post.description }}</p>
                         <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
                     </div>
                 </div>
-                <div class="w3-third w3-margin-bottom">
-                    <div class="w3-container w3-white">
-                        <p><b>Morty GAN</b></p>
-                        <p class="w3-opacity">Sat 28 Nov 2016</p>
-                        <p class="blog-desc">Generative adversarial network for Morty sprite generation based on Pocket Mortys.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
-                    </div>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <div class="w3-container w3-white">
-                        <p><b>PokeGAN</b></p>
-                        <p class="w3-opacity">28 Apr 2018</p>
-                        <p class="blog-desc">Generative adversarial network for Pokemon sprite generation.</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

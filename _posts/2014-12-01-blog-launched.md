@@ -1,8 +1,9 @@
 ---
 layout: blogpost
 title: "Blog Launch"
-date: 2018-04-21
+date: 2014-12-01
 tags: personal
+description: "Quick blurb about the blog."
 ---
 
 # Launching the blog!
