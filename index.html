@@ -41,9 +41,11 @@ title: Michael Riedl
                 <div class="w3-third w3-margin-bottom">
                     <div class="w3-container w3-white">
                         <p><b>{{ post.title }}</b></p>
-                        <p class="w3-opacity">{{ post.date | date: '%Y %b' }}</p>
+                        <p class="w3-opacity">{{ post.date | date_to_string }}</p>
                         <p class="blog-desc">{{ post.description }}</p>
-                        <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
+                        <a href="{{ post.url }}">
+                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
+                        </a>
                     </div>
                 </div>
                 {% endfor %}

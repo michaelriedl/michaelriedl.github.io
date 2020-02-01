@@ -2,7 +2,7 @@
 layout: blogpost
 title: "Batwing Tri-Copter"
 date: 2014-12-25
-tags: drone
+tags: drone electronics
 description: "Got the parts to build a drone for Xmas!"
 ---
 

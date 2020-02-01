@@ -1,7 +1,9 @@
 ---
 layout: blogpost
-title: "Generative Adversarial Network (GAN) for Pokemon Generation"
+title: "PokeGAN"
 date: 2018-04-28
+tags: programming deep-learning
+description: "Generative Adversarial Network (GAN) for Pokemon generation."
 ---
 
 One of the current research topics we find very interesting is Deep Learning. Deep learning algorithms have shown state-of-the-art performance for many perceptual problems such as image classification and speech recognition. Since it appears that deep learning is going to continue to be a very hot topic for at least the near future, we made it a goal to learn more about the subject. Before learning the basics, we thought it would be fun to dive off the deep end and try a deep learning project based on existing work.
