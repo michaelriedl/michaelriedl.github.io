@@ -3,7 +3,7 @@ layout: blogpost
 title: "Tri-Copter Update"
 date: 2015-01-01
 tags: drone electronics
-description: "Partial build update"
+description: "Partial build update."
 ---
 
 <p align="center">

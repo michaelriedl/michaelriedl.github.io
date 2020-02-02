@@ -7,7 +7,7 @@ description: "The drone took its first flight!"
 ---
 
 <p align="center">
-<img src="/assets/images/blogs/batbone_build.jpg" alt="BatBone" width="400">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YgfCGS8Neso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 # First Flight!
