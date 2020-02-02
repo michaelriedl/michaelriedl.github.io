@@ -1,7 +1,7 @@
 ---
 layout: blogpost
 title: "Tri-Copter Update 2"
-date: 2015-01-01
+date: 2015-01-18
 tags: drone electronics
 description: "The drone took its first flight!"
 ---
