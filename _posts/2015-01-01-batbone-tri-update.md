@@ -7,7 +7,7 @@ description: "Partial build update."
 ---
 
 <p align="center">
-<img src="/assets/images/blogs/batbone_build.jpg" alt="BatBone" width="400">
+<img src="/assets/images/blogs/batbone_build.jpg" alt="BatBone" style="width:50%">
 </p>
 
 # Partial Build Update
