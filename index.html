@@ -40,7 +40,7 @@ title: Michael Riedl
                 {% for post in site.posts limit:3 %}
                 <div class="w3-third w3-margin-bottom">
                     <div class="w3-container w3-white">
-                        <p><b>{{ post.title }}</b></p>
+                        <p class="blog-title"><b>{{ post.title }}</b></p>
                         <p class="w3-opacity">{{ post.date | date_to_string }}</p>
                         <p class="blog-desc">{{ post.description }}</p>
                         <a href="{{ post.url }}">
