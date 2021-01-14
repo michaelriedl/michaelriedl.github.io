@@ -16,14 +16,7 @@ layout: default
         </h5>
         <div class="w3-container w3-content w3-left-align w3-padding-64" style="max-width:800px">
             {{ content }}
-            <script
-              async
-              src="https://utteranc.es/client.js"
-              repo="michaelriedl/michaelriedl.github.io"
-              issue-term="title"
-              theme="github-light"
-              crossorigin="anonymous"
-            ></script>
+            {% include utterances.html %}
         </div>
     </div>
 </div>
