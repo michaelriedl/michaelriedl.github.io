@@ -22,7 +22,7 @@ kramdown:
   syntax_highlighter: rouge
 ```
 
-After adding the configuration YAML, I could see that the code blocks were inserting the correct tags for syntax highlighting in the code blocks. However, the highlighting was not working because my CSS did not support syntax highlighting. The easiest way I found to fix this is by downloading a syntax CSS from <a href="http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html " target="_blank">here</a> and loading it along with my base CSS with
+After adding the configuration YAML, I could see that the code blocks were inserting the correct tags for syntax highlighting. However, the highlighting was not working because my CSS did not support syntax highlighting. The easiest way I found to fix this is by downloading a syntax CSS from <a href="http://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html " target="_blank">here</a> and loading it along with my base CSS with
 ```html
 <link rel="stylesheet" href="/assets/css/syntax.css">
 ```
