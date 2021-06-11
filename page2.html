@@ -1,18 +1,21 @@
 ---
 layout: default
+title: Michael Riedl
 ---
 
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/infinite-scroll.pkgd.min.js"></script>
+<script src="/assets/js/launch.js"></script>
+    
 <section class="cta-section theme-bg-light py-5">
     <div class="container text-center">
         <h2 class="heading">Michael Riedl's Blog - Dabbling in all things.</h2>
         <div class="intro">Personal blog for documenting projects ranging from electronics, programming, data science, to machine/deep learning.</div>
     </div><!--//container-->
 </section>
-
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container inf-scr">
-        <h1>Tag: {{ page.tag }}</h1><br>
-        {% for post in site.tags[page.tag] %}
+        {% for post in site.posts limit:6 offset:6 %}
         <div class="item mb-5">
             <div class="media">
                 <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.thumb }}" alt="image">
@@ -25,5 +28,19 @@ layout: default
             </div><!--//media-->
         </div><!--//item-->
         {% endfor %}
+        <!-- status elements -->
+        <div class="scroller-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+        </div>
+
+        <!-- pagination has path -->
+        <p class="pagination">
+        </p>
+        
     </div>
 </section>

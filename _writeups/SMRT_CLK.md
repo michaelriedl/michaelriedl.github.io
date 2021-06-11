@@ -1,5 +1,6 @@
 ---
-layout: projectspost
+layout: projectpost
+thumb: /assets/images/thumbs/smrt_thumb.png
 title: SMRT CLK
 ---
 <div class="w3-row w3-padding-32">

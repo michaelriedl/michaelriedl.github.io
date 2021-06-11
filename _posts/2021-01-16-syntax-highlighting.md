@@ -1,9 +1,10 @@
 ---
 layout: blogpost
+thumb: /assets/images/thumbs/highlight_thumb.png
 title: "Github.io Syntax Highlighting"
 date: 2021-01-16
 tags: programming
-description: "Getting syntax highlighting to work on your blog."
+intro: "Getting syntax highlighting to work on your blog."
 ---
 
 I tried using the block syntax highlighting feature of Github.io blogs using Jekyll and Kramdown. However, it did not seem to work right out of the box. I had to do some searching and no one seemed to have a start to finish guide and I had to piece multiple suggestions together. To ultimately get it working I had to do a number of things.

@@ -1,22 +1,25 @@
 ---
 layout: default
 ---
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-    
-    <!-- About the Site -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
-        <h1 class="w3-wide">{{ page.title }}</h1>
-        <h3 class="w3-wide">{{ page.date | date_to_string }}</h3>
-        <h5 class="w3-wide w3-opacity"> Tags:
-            {% for tag in page.tags %}
-              {% capture tag_name %}{{ tag }}{% endcapture %}
-              <a href="/tag/{{ tag_name }}"><nobr>{{ tag_name }}</nobr></a>
-            {% endfor %}
-        </h5>
-        <div class="w3-container w3-content w3-left-align w3-padding-64" style="max-width:800px">
+
+<article class="blog-post px-3 py-5 p-md-5">
+    <div class="container">
+        <header class="blog-post-header">
+            <h2 class="title mb-2">{{ page.title }}</h2>
+            <div class="meta"><span class="date">Published on {{ page.date | date_to_string }}</span></div>
+            <div class="meta mb-3">
+                <span>Tags:
+                {% for tag in page.tags %}
+                  {% capture tag_name %}{{ tag }}{% endcapture %}
+                  <span><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></span>
+                {% endfor %}</span>
+        </header>
+        
+        <div class="blog-post-body">
+            
             {{ content }}
             {% include utterances.html %}
+            
         </div>
     </div>
-</div>
+</article>

@@ -2,56 +2,46 @@
 layout: default
 title: Michael Riedl
 ---
+
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/infinite-scroll.pkgd.min.js"></script>
+<script src="/assets/js/launch.js"></script>
     
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
-    
-    <!-- About the Site -->
-    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
-        <img src="/assets/images/logo_color_web.png" class="w3-round" alt="Logo" style="width:30%">
-        <h2 class="w3-wide">MICHAEL RIEDL</h2>
-        <p class="w3-opacity"><i>Dabbling in all things.</i></p>
-        <p class="w3-left-align">Personal blog for documenting projects ranging from electronics, programming,
-        machine learning, and home improvement. Mature projects will have complete write-ups while others
-        will have short blog entries.</p>
-        <div class="w3-row w3-padding-32">
-            <h3 class="w3-wide">POPULAR PROJECTS</h3>
-            <div class="w3-third">
-                <p>R2W MKI</p>
-                <img src="/assets/images/pi_pgs.jpg" class="w3-round w3-margin-bottom" alt="R2W MKI" style="width:80%">
-            </div>
-            <div class="w3-third">
-                <p>3D Printed Soap Dish</p>
-                <img src="/assets/images/soap_dish.jpg" class="w3-round w3-margin-bottom" alt="Soap Dish" style="width:80%">
-            </div>
-            <div class="w3-third">
-                <p>The Ark</p>
-                <img src="/assets/images/ark.jpg" class="w3-round" alt="The Ark" style="width:80%">
-            </div>
-        </div>
-    </div>
-    
-    <!-- Blog Post Section -->
-    <div class="w3-black">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h3 class="w3-wide w3-center">RECENT BLOG POSTS</h3>
-            
-            <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-                {% for post in site.posts limit:3 %}
-                <div class="w3-third w3-margin-bottom">
-                    <div class="w3-container w3-white">
-                        <p class="blog-title"><b>{{ post.title }}</b></p>
-                        <p class="w3-opacity">{{ post.date | date_to_string }}</p>
-                        <p class="blog-desc">{{ post.description }}</p>
-                        <a href="{{ post.url }}">
-                            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
-                        </a>
-                    </div>
-                </div>
-                {% endfor %}
+<section class="cta-section theme-bg-light py-5">
+    <div class="container text-center">
+        <h2 class="heading">Michael Riedl's Blog - Dabbling in all things.</h2>
+        <div class="intro">Personal blog for documenting projects ranging from electronics, programming, data science, to machine/deep learning.</div>
+    </div><!--//container-->
+</section>
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container inf-scr">
+        {% for post in site.posts limit:6 %}
+        <div class="item mb-5">
+            <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.thumb }}" alt="image">
+                <div class="media-body">
+                    <h3 class="title mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <div class="meta mb-1"><span class="date">Published on {{ post.date | date_to_string }}</span></div>
+                    <div class="intro">{{ post.intro }}</div>
+                    <a class="more-link" href="{{ post.url }}">Read more &rarr;</a>
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </div><!--//item-->
+        {% endfor %}
+        <!-- status elements -->
+        <div class="scroller-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
             </div>
         </div>
+
+        <!-- pagination has path -->
+        <p class="pagination">
+            <a class="pagination__next" href="/page2.html"></a>
+        </p>
+        
     </div>
-    
-<!-- End Page Content -->
-</div>
+</section>

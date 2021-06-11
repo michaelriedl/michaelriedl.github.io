@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="blog-post px-3 py-5 p-md-5">
+    <div class="container">
+        <header class="blog-post-header">
+            <h2 class="title mb-2">{{ page.title }}</h2>
+            <div class="meta"><span class="date">Updated on {{ page.date | date_to_string }}</span></div>
+        </header>
+        
+        <div class="blog-post-body">
+            
+            {{ content }}
+            {% include utterances.html %}
+            
+        </div>
+    </div>
+</article>

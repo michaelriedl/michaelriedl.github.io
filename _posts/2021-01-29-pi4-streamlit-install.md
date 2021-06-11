@@ -1,9 +1,10 @@
 ---
 layout: blogpost
+thumb: /assets/images/thumbs/streamlit_thumb.png
 title: "Installing Streamlit on RPi4"
 date: 2021-01-29
 tags: programming
-description: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64bit."
+intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64bit."
 ---
 
 I recently got a Raspberry Pi 4 and the first project I want to use it for is scraping stock data. In addition, I want the Pi to run a web-based dashboard in the background so that I can monitor the scraping and data quality. I have some familiarity with Streamlit, which is a Python package that allows you to build data science web-based dashboards using Python, so I figure I should try to get that running on the Pi. Just trying to run a pip install failed.

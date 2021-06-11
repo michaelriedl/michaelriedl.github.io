@@ -1,9 +1,10 @@
 ---
 layout: blogpost
+thumb: /assets/images/thumbs/masonry_thumb.png
 title: "Masonry Alignment Issues"
 date: 2021-02-21
 tags: programming
-description: "How to fix Masonry alignment issues on screen rotation."
+intro: "How to fix Masonry alignment issues on screen rotation."
 ---
 
 I've been helping build a new website for a small business and came across this really weird issue. We are using a free CSS design <a href="https://www.free-css.com/free-css-templates/page263/moschino" target="_blank">Moschino</a> which uses <a href="https://masonry.desandro.com" target="_blank">Masonry</a> to handle the resizing and alignment of the images and text on the home screen. The issue we came across is on mobile, if the screen was rotated from portrait to landscape and then back to portrait, Masonry would not resize the images and text correctly; it would leave images and text overlapping each other. We could also duplicate this on a desktop by shrinking the window really small and forcing the layout into a single column. 

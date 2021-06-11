@@ -1,44 +1,29 @@
 ---
-layout: projects
-title: Michael Riedl/Projects
+layout: default
+title: Projects
 ---
-<div class="w3-row w3-padding-32">
-    <h2 class="w3-wide">Featured Project</h2>
-    <h3 class="w3-wide"><a href="/projects/SMRT_CLK.html">SMRT CLK</a></h3>
-    <a href="/projects/SMRT_CLK.html">
-        <img src="/assets/images/projects/smrt_clk/smrt_clk.jpg" class="w3-round w3-margin-bottom" alt="SMRT CLK" style="width:50%">
-    </a>
-    <figcaption>A smart touchscreen clock / dashboard based on the Raspberry Pi Zero.</figcaption>
-</div>
-<div class="w3-row w3-padding-32">
-    <h2 class="w3-wide">All Projects</h2>
-    <!-- SMRT CLK -->
-    <div class="w3-third">
-        <p><a href="/projects/SMRT_CLK.html">SMRT CLK</a></p>
-        <a href="/projects/SMRT_CLK.html">
-            <img src="/assets/images/projects/smrt_clk/smrt_clk.jpg" class="w3-round w3-margin-bottom" alt="SMRT CLK" style="width:80%">
-        </a>
+    
+<section class="cta-section theme-bg-light py-5">
+    <div class="container text-center">
+        <h2 class="heading">Michael Riedl's Blog - Dabbling in all things.</h2>
+        <div class="intro">Personal blog for documenting projects ranging from electronics, programming, data science, to machine/deep learning.</div>
+    </div><!--//container-->
+</section>
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container inf-scr">
+        {% for post in site.writeups %}
+        <div class="item mb-5">
+            <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.thumb }}" alt="image">
+                <div class="media-body">
+                    <h3 class="title mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <div class="meta mb-1"><span class="date">Updated on {{ post.date | date_to_string }}</span></div>
+                    <div class="intro">{{ post.intro }}</div>
+                    <a class="more-link" href="{{ post.url }}">Read more &rarr;</a>
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </div><!--//item-->
+        {% endfor %}
+        
     </div>
-    <!-- Morty GAN -->
-    <div class="w3-third">
-        <p><a href="/projects/MortyGAN.html">Morty GAN</a></p>
-        <a href="/projects/MortyGAN.html">
-            <img src="/assets/images/projects/morty_gan/morty.jpg" class="w3-round w3-margin-bottom" alt="Morty GAN" style="width:80%">
-        </a>
-    </div>
-    <!-- R2W MKI -->
-    <div class="w3-third">
-        <p>R2W MKI</p>
-        <img src="/assets/images/pi_pgs.jpg" class="w3-round w3-margin-bottom" alt="R2W MKI" style="width:80%">
-    </div>
-    <!-- Soap Dish -->
-    <div class="w3-third">
-        <p>3D Printed Soap Dish</p>
-        <img src="/assets/images/soap_dish.jpg" class="w3-round w3-margin-bottom" alt="Soap Dish" style="width:80%">
-    </div>
-    <!-- The Ark -->
-    <div class="w3-third">
-        <p>The Ark</p>
-        <img src="/assets/images/ark.jpg" class="w3-round" alt="The Ark" style="width:80%">
-    </div>
-</div>
+</section>

@@ -1,6 +1,8 @@
 ---
-layout: projectspost
-title: Morty GAN
+layout: projectpost
+thumb: /assets/images/thumbs/morty_thumb.png
+title: "Morty GAN"
+date: 2021-06-11
 ---
 <!-- Load TensorFlow.js -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
@@ -68,8 +70,7 @@ title: Morty GAN
 
 </script>
 
-<div class="w3-row w3-padding-32">
-    <h1 class="w3-wide">Morty GAN</h1>
+<div class="text-center">
     <p>The image can take a while depending on OS and internet speed.</p>
     <canvas height="120" width="120"></canvas>
     <br>
