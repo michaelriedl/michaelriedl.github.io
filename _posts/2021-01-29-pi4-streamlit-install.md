@@ -3,7 +3,7 @@ layout: blogpost
 thumb: /assets/images/thumbs/streamlit_thumb.png
 title: "Installing Streamlit on RPi4"
 date: 2021-01-29
-tags: programming
+tags: raspberry-pi programming
 intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64bit."
 ---
 

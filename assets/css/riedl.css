@@ -10010,6 +10010,9 @@ h1, h2, h3, h4, h5, h6 {
   .main-wrapper {
     margin-left: 0;
   }
+  ul.fix-center{
+      text-align: center !important;
+  }
 }
 @media (max-width: 767.98px) {
   .signup-form .form-group {
@@ -10076,8 +10079,4 @@ h1, h2, h3, h4, h5, h6 {
 .loader-ellips__dot:nth-child(4) {
   animation-name: reveal;
   animation-direction: reverse;
-}
-
-.cap-center{
-    text-align: center;
 }
