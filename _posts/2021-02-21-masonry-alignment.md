@@ -12,7 +12,7 @@ I've been helping build a new website for a small business and came across this 
 Based on playing around with the error, it felt like there was some kind of circular logic issue where the element needed to wait for Masonry to change the arrangement before resizing itself but Masonry also needed to know the new element size before making the new arrangement. I searched and searched and couldn't really find an easy solution. I tried fixing the issue myself by adding in delays to Masonry hoping that this was caused by some kind of race condition. However, nothing I tried fixed the issue.
 
 Finally, after going back to searching I found an <a href="https://github.com/desandro/masonry/issues/427#issuecomment-50423923" target="_blank">answer</a> to fixing this problem. Basically, the elements that Masonry controls need an explicit default size even if they are being dynamically resized by the CSS. This can be solved by adding in 
-```html
+```css
 .hentry {
     margin: 0 0 3.5em;
     width: 100%
