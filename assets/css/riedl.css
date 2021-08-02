@@ -9838,6 +9838,8 @@ h1, h2, h3, h4, h5, h6 {
 .blog-list .item .post-thumb {
   max-width: 110px;
   border-radius: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .blog-list .item .intro {
   font-size: 0.875rem;
