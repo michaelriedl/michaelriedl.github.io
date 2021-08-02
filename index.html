@@ -18,7 +18,7 @@ title: Michael Riedl
         {% for post in site.posts limit:6 %}
         <div class="item mb-5">
             <div class="media">
-                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.thumb }}" alt="image">
+                <img class="mr-3 img-fluid post-thumb d-md-flex" src="{{ post.thumb }}" alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     <div class="meta mb-1"><span class="date">Published on {{ post.date | date_to_string }}</span></div>
