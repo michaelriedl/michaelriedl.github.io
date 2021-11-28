@@ -11,7 +11,8 @@ title: Projects
 </section>
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container inf-scr">
-        {% for post in site.writeups %}
+        {% assign sortedPosts = site.writeups | sort: 'title' %}
+        {% for post in sortedPosts %}
         <div class="item mb-5">
             <div class="media">
                 <img class="mr-3 img-fluid post-thumb d-md-flex" src="{{ post.thumb }}" alt="image">
