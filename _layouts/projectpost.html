@@ -6,7 +6,8 @@ layout: default
     <div class="container">
         <header class="blog-post-header">
             <h1 class="title mb-2">{{ page.title }}</h1>
-            <div class="meta"><span class="date">Updated on {{ page.date | date_to_string }}</span></div>
+            <div class="meta"><span class="date">Posted on {{ page.date | date_to_string }}</span></div>
+            <div class="meta"><span class="date">Updated on {{ page.update | date_to_string }}</span></div>
         </header>
         
         <div class="blog-post-body">

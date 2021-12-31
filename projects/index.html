@@ -11,14 +11,15 @@ title: Projects
 </section>
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container inf-scr">
-        {% assign sortedPosts = site.writeups | sort: 'title' %}
-        {% for post in sortedPosts %}
+        {% assign sortedPosts = site.writeups | sort: 'date' %}
+        {% for post in sortedPosts reversed %}
         <div class="item mb-5">
             <div class="media">
                 <img class="mr-3 img-fluid post-thumb d-md-flex" src="{{ post.thumb }}" alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                    <div class="meta mb-1"><span class="date">Updated on {{ post.date | date_to_string }}</span></div>
+                    <div class="meta mb-1"><span class="date">Posted on {{ post.date | date_to_string }}</span></div>
+                    <div class="meta mb-1"><span class="date">Updated on {{ post.update | date_to_string }}</span></div>
                     <div class="intro">{{ post.intro }}</div>
                     <a class="more-link" href="{{ post.url }}">Read more &rarr;</a>
                 </div><!--//media-body-->

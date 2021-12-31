@@ -2,9 +2,10 @@
 layout: projectpost
 thumb: /assets/images/thumbs/smrt_thumb.png
 title: SMRT CLK
+date: 2021-06-11
+update: 2021-06-11
 ---
 <div class="w3-row w3-padding-32">
-    <h1 class="w3-wide">SMRT CLK</h1>
     <h3 class="w3-wide">A smart touchscreen clock / dashboard based on the Raspberry Pi Zero.</h3>
     <div class="w3-container w3-content w3-left-align w3-padding-64" style="max-width:800px">
         <p align="center">

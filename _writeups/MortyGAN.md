@@ -3,6 +3,7 @@ layout: projectpost
 thumb: /assets/images/thumbs/morty_thumb.png
 title: "Morty GAN"
 date: 2021-06-11
+update: 2021-06-11
 ---
 <!-- Load TensorFlow.js -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
