@@ -49,11 +49,15 @@ ERROR: Could not build wheels for pyarrow which use PEP 517 and cannot be instal
 
 ```
 
-After some searching I came across this discussion on the Streamlit site <a href="https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35" target="_blank">https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35</a>. Some people solved it by switching to Archiconda but I want to stick with using virtualenvs. One of the suggestions in the post I got to work but needs some modification. Running the following finally works:
+After some searching I came across this discussion on the Streamlit site <a href="https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35" target="_blank">https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35</a>. Some people solved it by switching to Archiconda but I want to stick with using virtualenvs. One of the suggestions in the post I got to work but needs some modification. Running the following finally works (note: the original commands no longer work and I have updated them appropriately):
 ```bash
+# !!! Apparently these commands no longer works !!!
 $ wget https://apache.bintray.com/arrow/ubuntu/apache-arrow-archive-keyring-latest-focal.deb
-
 $ sudo apt install ./apache-arrow-archive-keyring-latest-focal.deb
+
+# !!! Try these instead !!!
+$ wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+$ sudo apt install ./apache-arrow-apt-source-latest-focal.deb
 
 $ sudo apt update
 
