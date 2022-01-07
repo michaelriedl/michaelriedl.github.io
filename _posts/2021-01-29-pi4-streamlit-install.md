@@ -56,6 +56,7 @@ $ wget https://apache.bintray.com/arrow/ubuntu/apache-arrow-archive-keyring-late
 $ sudo apt install ./apache-arrow-archive-keyring-latest-focal.deb
 
 # !!! Try these instead !!!
+$ sudo apt install ca-certificates lsb-release
 $ wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
 $ sudo apt install ./apache-arrow-apt-source-latest-focal.deb
 
