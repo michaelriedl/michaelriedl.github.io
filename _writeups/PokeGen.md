@@ -3,7 +3,7 @@ layout: projectpost
 thumb: /assets/images/thumbs/poke_thumb.png
 title: "Generate Pokemon Sprites"
 date: 2022-01-16
-update: 2022-01-29
+update: 2022-01-28
 ---
 <!-- Load TensorFlow.js -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
