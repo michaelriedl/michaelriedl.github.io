@@ -26,6 +26,7 @@ In this project I will document various approaches to generating never before se
     <canvas width="224" height="272"></canvas>
     <br>
     <button id="genButton" onclick="genImage()" type="button">Generate New Sprite!</button>
+    <p><strong>Generating additional sprites quickly may crash the page if the OS garbage collection is not performed quickly (this is mostly a problem on mobile devices).</strong></p>
 </div>
 
 <!-- Sleep function -->
@@ -89,7 +90,7 @@ In this project I will document various approaches to generating never before se
             let x_tensor = tf.randomNormal([56*68*3, 1]);
 
             // Run the model
-            let img_final_small_tensor = model.predict(x_tensor);
+            let img_final_small_tensor = model.execute(x_tensor);
 
             // Debug statement
             console.log("Inference completed");
