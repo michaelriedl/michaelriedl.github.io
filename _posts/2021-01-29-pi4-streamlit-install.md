@@ -4,10 +4,10 @@ thumb: /assets/images/thumbs/streamlit_thumb.png
 title: "Installing Streamlit on RPi4"
 date: 2021-01-29
 tags: raspberry-pi programming
-intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64bit."
+intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64-bit."
 ---
 
-I recently got a Raspberry Pi 4 and the first project I want to use it for is scraping stock data. In addition, I want the Pi to run a web-based dashboard in the background so that I can monitor the scraping and data quality. I have some familiarity with Streamlit, which is a Python package that allows you to build data science web-based dashboards using Python, so I figure I should try to get that running on the Pi. Just trying to run a pip install failed.
+I recently got a Raspberry Pi 4 and the first project I want to use it for is scraping stock data. In addition, I want the Pi to run a web-based dashboard in the background so that I can monitor the scraping and data quality. I have some familiarity with Streamlit, which is a Python package that allows you to build data science web-based dashboards using Python, so I figure I should try to get that running on the Pi. For reference, I am running Ubuntu 20.04.2 LTS 64-bit on my Raspberry Pi 4. Just trying to run a pip install failed.
 ```bash
 $ pip install streamlit
 ...
@@ -73,3 +73,9 @@ $ streamlit hello
 ```
 
 Hopefully this helps someone else who gets stuck!
+
+### UPDATES:
+
+1. Streamlit will not work on 32-bit operating systems. I have tried debugging this a couple of times and was not able to get it working.
+2. The source location for Apache Arrow has changed a couple of times. I believe the commands above are currently working for Ubuntu (I think you may need to make a small modification for Raspberry Pi OS). I left the legacy commands for reference.
+3. As of now if you update pip to the latest version, you can install Streamlit without issue from pip.
