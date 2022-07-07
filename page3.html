@@ -15,7 +15,7 @@ title: Michael Riedl
 </section>
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container inf-scr">
-        {% for post in site.posts limit:6 offset:6 %}
+        {% for post in site.posts limit:6 offset:12 %}
         <div class="item mb-5">
             <div class="media">
                 <img class="mr-3 img-fluid post-thumb d-md-flex" src="{{ post.thumb }}" alt="image">
@@ -40,7 +40,6 @@ title: Michael Riedl
 
         <!-- pagination has path -->
         <p class="pagination">
-        <a class="pagination__next" href="/page3.html"></a>
         </p>
         
     </div>
