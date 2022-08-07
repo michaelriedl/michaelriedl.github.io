@@ -7,6 +7,17 @@ tags: raspberry-pi programming
 intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64-bit."
 ---
 
+## Bottom Line Up Front
+
+As of 8/6/2022 I have confirmed on both the latest 64-bit Raspberry Pi OS and the 64-bit Ubuntu 20.04.2 LTS operating systems that Streamlit can now be easily installed with the most current pip version. It still seems that Streamlit is not compatible with the 32-bit version of Raspberry Pi OS.
+
+A fresh install of the 64-bit Raspberry Pi OS was missing pip for me so I installed it with
+```bash
+sudo apt install python3-pip
+```
+
+## Original Post
+
 I recently got a Raspberry Pi 4 and the first project I want to use it for is scraping stock data. In addition, I want the Pi to run a web-based dashboard in the background so that I can monitor the scraping and data quality. I have some familiarity with Streamlit, which is a Python package that allows you to build data science web-based dashboards using Python, so I figure I should try to get that running on the Pi. For reference, I am running Ubuntu 20.04.2 LTS 64-bit on my Raspberry Pi 4. Just trying to run a pip install failed.
 ```bash
 $ pip install streamlit
@@ -21,7 +32,7 @@ ERROR: Could not build wheels for pyarrow which use PEP 517 and cannot be instal
 ```
 This is a pretty easy error to debug. The issue is that I do not currently have cmake installed. This is easily remedied by running:
 ```bash
-$ sudo apt install cmake
+sudo apt install cmake
 ```
 Trying to run a pip install fails again this time with a more cryptic error.
 ```bash
@@ -52,24 +63,24 @@ ERROR: Could not build wheels for pyarrow which use PEP 517 and cannot be instal
 After some searching I came across this discussion on the Streamlit site <a href="https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35" target="_blank">https://discuss.streamlit.io/t/raspberry-pi-streamlit/2900/35</a>. Some people solved it by switching to Archiconda but I want to stick with using virtualenvs. One of the suggestions in the post I got to work but needs some modification. Running the following finally works (**note: the original commands no longer work and I have updated them appropriately**):
 ```bash
 # !!! Apparently these commands no longer work !!!
-$ wget https://apache.bintray.com/arrow/ubuntu/apache-arrow-archive-keyring-latest-focal.deb
-$ sudo apt install ./apache-arrow-archive-keyring-latest-focal.deb
+wget https://apache.bintray.com/arrow/ubuntu/apache-arrow-archive-keyring-latest-focal.deb
+sudo apt install ./apache-arrow-archive-keyring-latest-focal.deb
 
 # !!! Try these instead !!!
-$ sudo apt install ca-certificates lsb-release
-$ wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
-$ sudo apt install ./apache-arrow-apt-source-latest-focal.deb
+sudo apt install ca-certificates lsb-release
+wget https://apache.jfrog.io/artifactory/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-apt-source-latest-$(lsb_release --codename --short).deb
+sudo apt install ./apache-arrow-apt-source-latest-focal.deb
 
-$ sudo apt update
+sudo apt update
 
-$ sudo apt install libarrow-dev libarrow-python-dev
+sudo apt install libarrow-dev libarrow-python-dev
 
-$ ARROW_HOME=/usr PYARROW_CMAKE_OPTIONS="-DARROW_ARMV8_ARCH=armv8-a" pip install streamlit
+ARROW_HOME=/usr PYARROW_CMAKE_OPTIONS="-DARROW_ARMV8_ARCH=armv8-a" pip install streamlit
 ```
 
 After completing the install I can run the included Streamlit demo:
 ```bash
-$ streamlit hello
+streamlit hello
 ```
 
 Hopefully this helps someone else who gets stuck!
