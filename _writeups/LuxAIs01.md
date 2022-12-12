@@ -106,22 +106,21 @@ It can be seen from the animation above that the means shift over time to the be
 
 ## Comparison of the Agents
 In this section I compare the behavior of the greedy heuristic and rule-based RL agents. To do this comparison, I have each agent play a simple agent that only collects resources with a single worker. I then have the two agents play each other. Each of these games uses the same seed so that the board is identical for each match. The replays of the games are shown in the videos below.
-<video class="embed-responsive" width="640" height="480" controls>
-    <source src="/assets/videos/projects/simple_vs_greedy.mov">
-Your browser does not support the video tag.
-</video>
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EhBMUlbKdcs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <center>Simple agent versus greedy heuristic agent.</center>
+<br>
 
-<video class="embed-responsive" width="640" height="480" controls>
-    <source src="/assets/videos/projects/simple_vs_rl.mov">
-Your browser does not support the video tag.
-</video>
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oK2osAKZfcA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <center>Simple agent versus rule-based reinforcement learning agent.</center>
+<br>
 
-<video class="embed-responsive" width="640" height="480" controls>
-    <source src="/assets/videos/projects/greedy_vs_rl.mov">
-Your browser does not support the video tag.
-</video>
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nzjTNWZdIdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <center>Greedy heuristic agent versus rule-based reinforcement learning agent.</center>
 <br>
 
