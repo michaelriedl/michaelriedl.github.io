@@ -7,6 +7,12 @@ tags: electronics programming
 intro: "Modifying the WiFi dev board to sniff access points with the Flipper Zero."
 ---
 
+<div align="center">
+<figure>
+<img src="/assets/images/blogs/flipper_zero.png" alt="Flipper Zero" style="width:50%">
+</figure>
+</div>
+
 The Flipper Zero is like the Swiss Army knife of hardware hacking tools and is now fairly available for purchase. I was finally able to get one and the first thing I wanted to try was to modify the WiFi dev board to explore WiFi data scraping and penetration testing. There are plenty of guides and videos out there on how to install the ESP32 version of the Marauder firmware on the WiFi dev board. However, I wanted to try my own approach so that I could learn more along the way.
 
 The WiFi dev board is based on the ESP32S2 dev module. To flash new code to the board, you can use the Arduino IDE after some setup in the IDE. There are other guides out there to setup the Arduino IDE and I will not go through those steps here. Once the Arduino IDE is setup to work with the ESP32, you can start sniffing WiFi access points (APs) with the script bundled in the Arduino IDE Examples > WiFi > WiFiScan. Once you have the script open, you can flash it to the WiFi dev board.
