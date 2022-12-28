@@ -2,3 +2,5 @@
 *.lock
 Gemfile
 _site
+.bundle
+vendor
