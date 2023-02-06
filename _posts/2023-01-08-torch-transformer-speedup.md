@@ -27,7 +27,16 @@ While initially finding this breaking change to be quite annoying, I realized th
 
 While this makes the logic of the Dataset and DataLoader simple, it can result in batches with extra zero padding that is not necessary. This extra zero padding then results in extra computation that is ultimately discarded and wasted. The new versions of PyTorch detect this extra padding in a batch as it is passed to a Transformer model, and does not perform the extra compute on the zero padding, saving additional compute and improving processing speeds.
 
-I was curious what the exact speedup of my model would be with this change so I decided to write up a simple benchmark. My model is trained on the ZINC 15 dataset which has some longer sequences but the median sequence length is much shorter than the maximum. I sub-sampled the full dataset to make a smaller version for the benchmark. I then ran the forward pass of the model (using GPU acceleration) in batches and timed how long an entire epoch took. I ran this trial 100 times and took the average execution time. I repeated this benchmark for PyTorch 1.9 and PyTorch 1.13. The results of the benchmark are shown below.
+I was curious what the exact speedup of my model would be with this change so I decided to write up a simple benchmark. My model is trained on the ZINC 15 dataset which has some longer sequences but the median sequence length is much shorter than the maximum. The distribution on the lengths of the ZINC 15 sequences are shown in the image below.
+
+<div align="center">
+<figure>
+<img src="/assets/images/blogs/zinc15_hist_norm.png" alt="ZINC 15 distribution" style="width:50%">
+<figcaption>Sequence length distribution for the ZINC 15 dataset.</figcaption>
+</figure>
+</div>
+
+I sub-sampled the full dataset to make a smaller version for the benchmark. I then ran the forward pass of the model (using GPU acceleration) in batches and timed how long an entire epoch took. I ran this trial 100 times and took the average execution time. I repeated this benchmark for PyTorch 1.9 and PyTorch 1.13. The results of the benchmark are shown below.
 
 <div align="center">
 <figure>
