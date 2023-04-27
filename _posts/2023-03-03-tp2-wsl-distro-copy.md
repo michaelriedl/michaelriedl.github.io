@@ -77,6 +77,9 @@ enabled=true
 
 [interop]
 appendWindowsPath=false
+
+[network]
+generateResolvConf=false
 ```
 
 I hope this helps anyone else looking to run multiple distributions across the different versions of WSL.
