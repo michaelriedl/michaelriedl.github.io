@@ -14,7 +14,14 @@ intro: "Installing SLURM on a Jetson Nano in a Turing Pi 2 cluster."
 </figure>
 </div>
 
-Here I outline the steps to install SLURM on an NVIDIA Jetson Nano. I use this in a Turing Pi 2 cluster setup.
+Here I outline the steps to install SLURM on an NVIDIA Jetson Nano. I use this in a Turing Pi 2 cluster setup with a Raspberry Pi CM4 as the head node and three Jetson Nanos as compute nodes. The issue I encountered is that the version you can install with
+```bash
+sudo apt install slurmd
+```
+on the Jetson Nano is significantly behind the version installed on a Raspberry Pi CM4. Therefore to get a compatible version, you need to build SLURM from source. The sections below outline the steps to build from source.
+
+## About SLURM
+SLURM (Simple Linux Utility for Resource Management) is an open-source job scheduler and workload manager for Linux and Unix-like systems. It is commonly used in high-performance computing (HPC) clusters to manage and allocate computing resources, such as CPU cores, memory, and GPUs, among users and applications.
 
 ## Setup SSH Keys and Keychain
 The first thing to do is setup SSH keys between your computer and the Jetson Nano.
@@ -39,6 +46,21 @@ To have Keychain manage the SSH keys after a reboot, modify .bashrc to contain t
 source $HOME/.keychain/<hostname>-sh
 ```
 
+### Using ssh-agent Instead of Keychain
+If you prefer not to use Keychain, you can use ssh-agent to manage your SSH keys instead. ssh-agent is a program that runs in the background and caches your SSH keys, so you don't have to keep typing in your passphrase every time you connect to a remote server. Here's how you can use ssh-agent:
+```bash
+# start ssh-agent
+eval "$(ssh-agent -s)"
+
+# add your SSH key to ssh-agent
+ssh-add ~/.ssh/<ssh-key>
+
+# verify that your key has been added
+ssh-add -l
+```
+
+You can add the eval "$(ssh-agent -s)" line to your .bashrc file to automatically start ssh-agent when you open a terminal.
+
 ## Install IOZone (Optional)
 I want to be able to test the NVMe speeds of the Jetson Nano and I use IOZone for that. It can be installed with the commands below.
 
@@ -49,7 +71,7 @@ cd $IOZONE_VERSION/src/current
 make --quiet linux-arm
 ```
 
-## Install NVMe Temperature Sensor (Optional)
+## Install NVMe Temperature Monitor (Optional)
 I also want to be able to monitor the temperature of the NVMe drives so I install nvme-cli with the commands below.
 
 ```bash
@@ -57,12 +79,35 @@ sudo apt install nvme-cli
 sudo nvme smart-log /dev/nvme0 | grep "^temperature"
 ```
 
+### Using smartctl Instead of nvme-cli
+Another utility you can use to monitor the temperature of your NVMe drives is smartctl. smartctl is a tool that can read the S.M.A.R.T. (Self-Monitoring, Analysis and Reporting Technology) data from storage devices, including NVMe drives. Here's how you can use smartctl to monitor the temperature of your NVMe drives:
+
+```bash
+# install smartmontools
+sudo apt install smartmontools
+
+# view the temperature of the NVMe drive
+sudo smartctl -a /dev/nvme0 | grep Temperature
+```
+
+### Other Things to Monitor
+In addition to monitoring the temperature of your NVMe drives, you may also want to monitor other system metrics, such as CPU usage, memory usage, disk usage, and network activity. There are many tools available for monitoring these metrics, such as top, htop, nmon, iftop, and vnstat. You can install these tools using apt and use them to monitor your system's performance.
+
 ## Fix System Time
+It is important to have the time across the nodes synchronized so that jobs can be coordinated and tracked. To make sure the times are accurate, we install a Network Time Protocol (NTP) utility. This is done with the commands below.
 ```bash
 sudo apt install ntpdate -y
 ```
 
+### About NTP and NTPdate
+The Network Time Protocol (NTP) is a protocol used to synchronize the clocks of computers over a network. The protocol is designed to be accurate and reliable, and is commonly used in computer networks, including the Internet.
+
+NTPdate is a simple utility that sets the system time on a Linux system by querying an NTP server. NTPdate is useful for correcting the system time if it is off by a few seconds or minutes.
+
+However, NTPdate is not a full-featured NTP client, and it is not recommended for continuous use. For continuous time synchronization, it is recommended to use a full-featured NTP client, such as chrony or ntp.
+
 ## Build Munge from Source
+Before building SLURM, you need to install Munge which is used for authentication across the nodes. We will also build Munge from source. Before building, we need to install dependencies and setup the user that is used for the Munge service.
 ```bash
 sudo apt install libssl-dev
 
@@ -70,9 +115,9 @@ sudo groupadd -r munge
 sudo useradd -c "MUNGE authentication service" --no-create-home -g munge -s /sbin/nologin -r munge
 ```
 
-Build from source using the instructions on <a href="https://github.com/dun/munge/wiki/Installation-Guide#installing-from-git" target="_blank">GitHub</a>. 
+After that setup you can build from source using the instructions on <a href="https://github.com/dun/munge/wiki/Installation-Guide#installing-from-git" target="_blank">GitHub</a>. 
 
-Move the munge.key into /etc/munge
+Next, move the munge.key into /etc/munge, make sure the permissions are set correctly, and start the service.
 
 ```bash
 sudo chown -R munge:munge /etc/munge
@@ -84,6 +129,7 @@ sudo systemctl start munge
 ```
 
 ## Build SLURM from Source
+After installing Munge, we can then build SLURM from source. First, install the required dependencies.
 ```bash
 sudo apt install libmysqlclient-dev
 sudo apt install libpam0g-dev
@@ -94,21 +140,29 @@ sudo apt install libreadline-dev
 sudo apt install libgtk-3-dev
 sudo apt install man2html
 sudo apt install libcurl4-openssl-dev
+```
 
+Next, you can configure and build SLURM with the commands below.
+```bash
 ./configure --sysconfdir=/etc/slurm/
 make
 sudo make install
 
 sudo install -D -m644 etc/slurmd.service /lib/systemd/system/
+```
 
+It is also important to setup the slurm user which is used to launch jobs on the compute nodes. It is very important that the User ID is the same across all of the nodes in the cluster. You can check the UID of the user slurm on the head node and set it on the compute nodes when you make the user. This is shown in the commands below.
+```bash
 sudo groupadd -r slurm
 sudo useradd -c "SLURM service" --no-create-home -g slurm -s /sbin/nologin -r slurm --uid <UID>
 ```
 
-Copy over configuration files
+Next, copy over configuration files. You may need to make the directory /etc/slurm with: 
+```bash
+sudo mkdir /etc/slurm
+```
 
-May need to make /etc/slurm with: sudo mkdir /etc/slurm
-
+Finally, you can make the required directories, set their permissions, and start the service.
 ```bash
 sudo mkdir /var/log/slurm
 sudo mkdir /var/lib/slurm
@@ -118,18 +172,17 @@ sudo chown -R slurm:slurm /var/log/slurm/
 
 sudo systemctl enable slurmd
 sudo systemctl start slurmd 
+```
 
+You can check the status of the service with either of the commands below.
+```bash
 systemctl status slurmd.service
 journalctl -xe
 ```
 
+If you are having issues matching the UID of the slurm users across the nodes, you can use the command below to change the UID.
 ```bash
 usermod -u NEW_UID your_username
-```
-
-```bash
-sudo scontrol update nodename=tp2-node-2 state=down reason=hung_proc
-sudo scontrol update nodename=tp2-node-2 state=resume
 ```
 
 In some threads it was noted that on newer versions of SLURM, you can specify the system unit directory with:
@@ -137,6 +190,12 @@ In some threads it was noted that on newer versions of SLURM, you can specify th
 ./configure --sysconfdir=/etc/slurm/ --with-systemdsystemunitdir=/etc/init.d/
 ```
 However, this does not work in earlier versions of SLURM.
+
+## Helpful SLURM Commands
+```bash
+sudo scontrol update nodename=tp2-node-2 state=down reason=hung_proc
+sudo scontrol update nodename=tp2-node-2 state=resume
+```
 
 ## Helpful Links
 
