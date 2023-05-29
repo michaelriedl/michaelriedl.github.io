@@ -1,0 +1,47 @@
+---
+layout: default
+title: Michael Riedl
+---
+
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/infinite-scroll.pkgd.min.js"></script>
+<script src="/assets/js/launch.js"></script>
+
+<section class="cta-section theme-bg-light py-5">
+    <div class="container text-center">
+        <h2 class="heading">Michael Riedl's Blog - Dabbling in all things.</h2>
+        <div class="intro">Personal blog for documenting projects ranging from electronics, programming, data science,
+            to machine/deep learning.</div>
+    </div><!--//container-->
+</section>
+<section class="blog-list px-3 py-5 p-md-5">
+    <div class="container inf-scr">
+        {% for post in site.posts limit:6 offset:24 %}
+        <div class="item mb-5">
+            <div class="media">
+                <img class="mr-3 img-fluid post-thumb d-md-flex" src="{{ post.thumb }}" alt="image">
+                <div class="media-body">
+                    <h3 class="title mb-1"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <div class="meta mb-1"><span class="date">Published on {{ post.date | date_to_string }}</span></div>
+                    <div class="intro">{{ post.intro }}</div>
+                    <a class="more-link" href="{{ post.url }}">Read more &rarr;</a>
+                </div><!--//media-body-->
+            </div><!--//media-->
+        </div><!--//item-->
+        {% endfor %}
+        <!-- status elements -->
+        <div class="scroller-status">
+            <div class="loader-ellips infinite-scroll-request">
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+                <span class="loader-ellips__dot"></span>
+            </div>
+        </div>
+
+        <!-- pagination has path -->
+        <p class="pagination">
+        </p>
+
+    </div>
+</section>
