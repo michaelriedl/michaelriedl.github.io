@@ -331,4 +331,4 @@ def astar(start, end, grid):
 
 It was interesting working with ChatGPT to get a working version of the A* algorithm. I think it is a great tool for brainstorming and getting ideas. I also think it is a great tool for getting unstuck when you are stuck on a problem. I am excited to see what other applications I can find for ChatGPT.
 
-If you want to try a demo in a Jupyter Notebook then check out the one I shared on <a href="https://www.kaggle.com/code/michaelriedl/a-pathfinding" target="_blank">Kaggle</a>.
+If you want to try a demo in a Jupyter Notebook then check out the one I shared on <a href="https://www.kaggle.com/michaelriedl/a-pathfinding" target="_blank">Kaggle</a>.
