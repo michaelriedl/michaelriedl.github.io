@@ -7,6 +7,40 @@ tags: raspberry-pi programming
 intro: "How to setup a Python virtual environment (virtualenv) on a Raspberry Pi."
 ---
 
+## Update for Bookworm OS
+
+With the release of Raspberry Pi OS Bookworm, the default Python version is now Python 3.11 and a virual environment is required to install Python packages. If you try to install something outside of a virtual environment you will be met with the following error message:
+
+```bash
+pip install streamlit
+
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+```
+
+This means that you must now install virtualenv with:
+```bash
+sudo apt install python3-virtualenv
+```
+
+After installing virtualenv, you can create a virtual environment and install streamlit with:
+```bash
+virtualenv test
+source test/bin/activate
+pip install streamlit
+```
+
+You can also deactivate an environment with:
+```bash
+deactivate
+```
+
+## Original Post
+
 A Python virtual environment allows you to build individual environments for your programming projects to install the required packages for the projects. Keeping environments separate for each project allows for the minimal dependencies to be installed to run the project. It also prevents package versions from clashing across projects. Finally, it makes it a little bit easier to share the environment requirements with someone else who wants to run your Python project.
 
 You can easily install virtualenv on a Raspberry Pi with pip using the following command:
