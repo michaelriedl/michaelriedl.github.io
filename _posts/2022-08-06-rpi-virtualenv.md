@@ -7,7 +7,7 @@ tags: raspberry-pi programming
 intro: "How to setup a Python virtual environment (virtualenv) on a Raspberry Pi."
 ---
 
-## Update for Bookworm OS
+## Update for Raspberry Pi OS Bookworm
 
 With the release of Raspberry Pi OS Bookworm, the default Python version is now Python 3.11 and a virual environment is required to install Python packages. If you try to install something outside of a virtual environment you will be met with the following error message:
 
