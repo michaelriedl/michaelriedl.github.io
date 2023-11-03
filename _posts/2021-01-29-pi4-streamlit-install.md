@@ -7,7 +7,41 @@ tags: raspberry-pi programming
 intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64-bit."
 ---
 
-## Bottom Line Up Front
+## Update for Raspberry Pi OS Bookworm
+
+With the release of Raspberry Pi OS Bookworm, a virtual environment is required to install Python packages. If you try to install something outside of a virtual environment you will be met with the following error message:
+
+```bash
+pip install streamlit
+
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+```
+
+This means that you must now install virtualenv with:
+```bash
+sudo apt install python3-virtualenv
+```
+
+After installing virtualenv, you can create a virtual environment and install Streamlit with:
+```bash
+virtualenv test
+source test/bin/activate
+pip install streamlit
+```
+
+You can also deactivate an environment with:
+```bash
+deactivate
+```
+
+I have not retested this with the 32-bit version of Raspberry Pi OS but I assume it is still not compatible, as noted in my previous updates to this post.
+
+## Update as of 8/6/2022
 
 As of 8/6/2022 I have confirmed on both the latest 64-bit Raspberry Pi OS and the 64-bit Ubuntu 20.04.2 LTS operating systems that Streamlit can now be easily installed with the most current pip version. It still seems that Streamlit is not compatible with the 32-bit version of Raspberry Pi OS.
 
