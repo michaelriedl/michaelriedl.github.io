@@ -56,7 +56,15 @@ AVX = 1 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | FMA = 1 | 
 
 ## Solution for Windows
 
-The solution for Windows is similar to the solution for Ubuntu. The main difference is that you need to install the CUDA toolkit from the <a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank">NVIDIA website</a> and make sure the Visual Studio Integration is included with the installation. I used the CUDA 12.1 version. You will also need to have installed the Visual Studio Build Tools prior to installing CUDA. I used the 2022 version. Once both of those are installed and you have restarted the machine, you will need to move some files from the CUDA installation to the VS Build Tools. If the files are missing from the VS Build Tools, you will get an error when trying to install llama-cpp-python. 
+The solution for Windows is similar to the solution for Ubuntu. The main difference is that you need to install the CUDA toolkit from the <a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank">NVIDIA website</a> and make sure the Visual Studio Integration is included with the installation.
+
+<div align="center">
+<figure>
+<img src="/assets/images/blogs/cuda_install_windows.png" alt="CUDA Windows installation" style="width:70%">
+<figcaption>Make sure the Visual Studio Integration option is checked.</figcaption>
+</figure>
+</div>
+ I used the CUDA 12.1 version. You will also need to have installed the Visual Studio Build Tools prior to installing CUDA. I used the 2022 version. Once both of those are installed and you have restarted the machine, you will need to move some files from the CUDA installation to the VS Build Tools. If the files are missing from the VS Build Tools, you will get an error when trying to install llama-cpp-python. 
 
 ```bash
 CMake Error at C:/Users/mriedl/AppData/Local/Temp/pip-build-env-vz70r577/normal/Lib/site-packages/cmake/data/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:503 (message):
@@ -80,7 +88,7 @@ Once you have done that, the commands below should work for Windows.
 ```bash
 conda create --name llama-env python=3.9
 conda activate llama-env
-set FORCE_CMAKE=1 && CMAKE_ARGS=-DLLAMA_CUBLAS=ON
+set FORCE_CMAKE=1 && set CMAKE_ARGS=-DLLAMA_CUBLAS=ON
 pip install --upgrade --force-reinstall llama-cpp-python --no-cache-dir
 ```
 
