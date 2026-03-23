@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/flipper_thumb.png
 title: "Sniffing WiFi APs with Flipper Zero and WiFi Dev Board"
 date: 2022-12-05
-tags: electronics programming
-intro: "Modifying the WiFi dev board to sniff access points with the Flipper Zero."
+categories: [Blog]
+tags: [electronics, programming]
+description: "Modifying the WiFi dev board to sniff access points with the Flipper Zero."
+image: /assets/images/thumbs/flipper_thumb.png
+redirect_from:
+  - /2022/12/05/flipper-zero-wifi.html
 ---
 
 <div align="center">

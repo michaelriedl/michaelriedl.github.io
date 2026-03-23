@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/apex_thumb.png
 title: "Installing NVIDIA Apex on Windows 11"
 date: 2023-05-26
-tags: programming deep-learning
-intro: "Installing NVIDIA Apex on Windows 11 for use with PyTorch 2.x."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Installing NVIDIA Apex on Windows 11 for use with PyTorch 2.x."
+image: /assets/images/thumbs/apex_thumb.png
+redirect_from:
+  - /2023/05/26/nvidia-apex-windows.html
 ---
 
 <div align="center">

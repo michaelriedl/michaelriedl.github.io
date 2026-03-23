@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/astar_thumb.png
 title: "Implementing the A* Pathfinding Algorithm with ChatGPT"
 date: 2023-04-03
-tags: programming deep-learning
-intro: "Using ChatGPT to implement the A* pathfinding algorithm in Python."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Using ChatGPT to implement the A* pathfinding algorithm in Python."
+image: /assets/images/thumbs/astar_thumb.png
+redirect_from:
+  - /2023/04/03/chatgpt-a-star.html
 ---
 
 <div align="center">

@@ -1,6 +1,20 @@
-*.DS_Store
-*.lock
-Gemfile
-_site
+# Bundler cache
 .bundle
 vendor
+
+# Jekyll generated site
+_site
+
+# macOS
+*.DS_Store
+
+# Node
+node_modules
+package-lock.json
+
+# IDE
+.idea
+.vscode
+
+# Caches
+.sass-cache

@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/llama2_thumb.png
 title: "Installing llama-cpp-python with GPU Support"
 date: 2023-09-10
-tags: programming deep-learning
-intro: "Installing llama-cpp-python to work with GPU offloading of model."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Installing llama-cpp-python to work with GPU offloading of model."
+image: /assets/images/thumbs/llama2_thumb.png
+redirect_from:
+  - /2023/09/10/llama2-install-gpu.html
 ---
 
 <div align="center">

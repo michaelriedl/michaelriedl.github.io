@@ -1,0 +1,8 @@
+- type: github
+  icon: "fab fa-github"
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/michael-riedl/"
+- type: instagram
+  icon: "fab fa-instagram"
+  url: "https://www.instagram.com/michaelriedl_/"

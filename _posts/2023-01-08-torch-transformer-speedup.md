@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/transformer_thumb.png
 title: "Speeding up your Transformer Model by Upgrading"
 date: 2023-01-08
-tags: deep-learning programming
-intro: "How upgrading your PyTorch version can speed up your Transformer model."
+categories: [Blog]
+tags: [deep-learning, programming]
+description: "How upgrading your PyTorch version can speed up your Transformer model."
+image: /assets/images/thumbs/transformer_thumb.png
+redirect_from:
+  - /2023/01/08/torch-transformer-speedup.html
 ---
 
 <div align="center">

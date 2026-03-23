@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/wsl_thumb.png
 title: "Setting Up WSL on Windows 11 22H2"
 date: 2022-12-26
-tags: electronics programming
-intro: "Dealing with issues setting up WSL on Windows 11 with update 22H2."
+categories: [Blog]
+tags: [electronics, programming]
+description: "Dealing with issues setting up WSL on Windows 11 with update 22H2."
+image: /assets/images/thumbs/wsl_thumb.png
+redirect_from:
+  - /2022/12/26/win11-wsl-setup.html
 ---
 
 I recently migrated from an old MacBook Air to a new Windows 11 laptop. I made the switch because most of my projects revolve around machine learning and deep learning. While there is some support for GPU acceleration on MacOS, I wanted to get a laptop with an NVIDIA GPU that has CUDA support. In the process of setting up my workflow on the new laptop, I hit a snag getting Windows Subsystem for Linux (WSL) installed on Windows 11 22H2. 

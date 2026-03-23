@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/pi_agents_thumb.png
 title: "Raspberry Pi AI Agents"
 date: 2024-08-06
-tags: programming deep-learning
-intro: "Playing 20 questions with LLM agents on a Raspberry Pi."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Playing 20 questions with LLM agents on a Raspberry Pi."
+image: /assets/images/thumbs/pi_agents_thumb.png
+redirect_from:
+  - /2024/08/06/pi-ai-agents.html
 ---
 
 <div align="center">

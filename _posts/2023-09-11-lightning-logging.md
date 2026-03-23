@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/lightning_thumb.png
 title: "Testing out the Logging for Lightning Fabric"
 date: 2023-09-11
-tags: programming deep-learning
-intro: "Testing how logging works with distributed training using Lightning Fabric."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Testing how logging works with distributed training using Lightning Fabric."
+image: /assets/images/thumbs/lightning_thumb.png
+redirect_from:
+  - /2023/09/11/lightning-logging.html
 ---
 
 <div align="center">

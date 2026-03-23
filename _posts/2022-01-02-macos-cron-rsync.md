@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/macos_cron_rsync_thumb.png
 title: "Schedule Rsync Jobs with Crontab on MacOS"
 date: 2022-01-02
-tags: programming
-intro: "Steps and settings to run crontab scheduled rsync jobs with macOS."
+categories: [Blog]
+tags: [programming]
+description: "Steps and settings to run crontab scheduled rsync jobs with macOS."
+image: /assets/images/thumbs/macos_cron_rsync_thumb.png
+redirect_from:
+  - /2022/01/02/macos-cron-rsync.html
 ---
 
 I have been meaning to setup a data backup plan for my machines for quite some time. I used to rely on a system of external drives that I would occasionally connect to my main machine and copy over a manual backup to the drive before putting the drive back into storage. In the last couple of years, I have lost that habit of routinely backing up to the external drives. I was spurred to act after watching <a href="https://youtu.be/S0KZ5iXTkzg" target="_blank">Jeff Geerling's video</a> on the topic.

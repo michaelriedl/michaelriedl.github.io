@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/virtualenv_thumb.png
 title: "Setting Up a Python Virtual Environment on a RPi"
 date: 2022-08-06
-tags: raspberry-pi programming
-intro: "How to setup a Python virtual environment (virtualenv) on a Raspberry Pi."
+categories: [Blog]
+tags: [raspberry-pi, programming]
+description: "How to setup a Python virtual environment (virtualenv) on a Raspberry Pi."
+image: /assets/images/thumbs/virtualenv_thumb.png
+redirect_from:
+  - /2022/08/06/rpi-virtualenv.html
 ---
 
 ## Update for Raspberry Pi OS Bookworm

@@ -1,15 +1,134 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# The language of the webpage
+lang: en
+
+# Change to your timezone
 timezone: America/New_York
-lsi: false
-safe: true
-source: .
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
+
+# jekyll-seo-tag settings
+title: Riedl's Blog
+tagline: Dabbling in all things.
+description: >-
+  Personal blog for documenting projects ranging from electronics, programming,
+  data science, to machine/deep learning.
+
+url: "https://michaelriedl.com"
+
+github:
+  username: michaelriedl
+
+social:
+  name: Michael Riedl
+  links:
+    - https://github.com/michaelriedl
+    - https://www.linkedin.com/in/michael-riedl/
+
+# Web Analytics Settings
+analytics:
+  google:
+    id: G-JQEPHBP6H2
+
+# Prefer color scheme setting (empty follows system preference)
+theme_mode:
+
+# the avatar on sidebar
+avatar: /assets/images/logo_color_web.png
+
+# boolean type, the global switch for TOC in posts
+toc: true
+
+comments:
+  provider: utterances
+  utterances:
+    repo: michaelriedl/michaelriedl.github.io
+    issue_term: title
+
+# Self-hosted static assets
+assets:
+  self_host:
+    enabled: false
+
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+
+paginate: 10
+
+# The base URL of your site
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
+
 kramdown:
-  math_engine: mathjax
+  footnote_backlink: "&#8617;&#xfe0e;"
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 collections:
-  writeups:
+  tabs:
     output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - "package*.json"
+
+plugins:
+  - jekyll-redirect-from
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

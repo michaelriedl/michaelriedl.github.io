@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/jekyll_thumb.png
 title: "Testing Your GitHub Pages Site Locally with Jekyll"
 date: 2021-06-11
-tags: programming
-intro: "Getting GitHub pages and Jekyll setup locally on macOS."
+categories: [Blog]
+tags: [programming]
+description: "Getting GitHub pages and Jekyll setup locally on macOS."
+image: /assets/images/thumbs/jekyll_thumb.png
+redirect_from:
+  - /2021/06/11/testing-jekyll.html
 ---
 
 I use GitHub Pages to host this blog and the most annoying part is constantly pushing changes to the repository and waiting for the site to rebuild to see the changes. This is particularly painful when adding any new styling or JavaScript functionality. I always knew that there was a way to host a Jekyll site locally to do development before pushing the changes to GitHub Pages, but until recently I found it too intimidating to try setting everything up. I wanted to write this post because I finally took the dive and did not find the <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll" target="_blank">tutorial on GitHub</a> particularly useful for someone who is completely new to Ruby, Bundler, and Jekyll. The steps I took to get it working are:

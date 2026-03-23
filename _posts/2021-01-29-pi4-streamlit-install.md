@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/streamlit_thumb.png
 title: "Installing Streamlit on RPi4"
 date: 2021-01-29
-tags: raspberry-pi programming
-intro: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64-bit."
+categories: [Blog]
+tags: [raspberry-pi, programming]
+description: "How to install Streamlit on RPi4 with Ubuntu 20.04.2 LTS 64-bit."
+image: /assets/images/thumbs/streamlit_thumb.png
+redirect_from:
+  - /2021/01/29/pi4-streamlit-install.html
 ---
 
 ## Update for Raspberry Pi OS Bookworm

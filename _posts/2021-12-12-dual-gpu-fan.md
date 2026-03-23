@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/gpufan_thumb.png
 title: "Custom Cooling for Dual GPU Setup"
 date: 2021-12-12
-tags: 3d-printing deep-learning electronics
-intro: "3D printed fan nozzle for cooling a dual open-air GPU setup."
+categories: [Blog]
+tags: [3d-printing, deep-learning, electronics]
+description: "3D printed fan nozzle for cooling a dual open-air GPU setup."
+image: /assets/images/thumbs/gpufan_thumb.png
+redirect_from:
+  - /2021/12/12/dual-gpu-fan.html
 ---
 
 <style type="text/css">
@@ -17,7 +19,7 @@ intro: "3D printed fan nozzle for cooling a dual open-air GPU setup."
 <script src="/assets/js/OrbitControls.js"></script>
 <script src="/assets/js/stlviewer.js"></script>
 
-I recently bought a second ASUS ROG Strix 1080Ti OC to increase the training throughput of my deep learning rig. As I was benchmarking the GPUs for parallel training (results in my <a href="/2021/11/25/used-gpu.html" target="_blank">previous blog post</a>), I noticed that the top GPU in my setup was running hot enough towards the end of the benchmarking to potentially start thermal throttling (84°C). Not only can this affect performance but it also can affect the longevity of the card. I knew this could potentially be an issue when I bought the card since my motherboard and case require the open-air cooled cards to be close to each other. However, I didn't want to upgrade my motherboard or case if the thermal issues could be solved with better airflow.
+I recently bought a second ASUS ROG Strix 1080Ti OC to increase the training throughput of my deep learning rig. As I was benchmarking the GPUs for parallel training (results in my <a href="/posts/used-gpu/" target="_blank">previous blog post</a>), I noticed that the top GPU in my setup was running hot enough towards the end of the benchmarking to potentially start thermal throttling (84°C). Not only can this affect performance but it also can affect the longevity of the card. I knew this could potentially be an issue when I bought the card since my motherboard and case require the open-air cooled cards to be close to each other. However, I didn't want to upgrade my motherboard or case if the thermal issues could be solved with better airflow.
 
 The first approach I took to increase the airflow to the GPUs was to upgrade the fans in my case. I have a NZXT H440 mid tower case that came with stock fans and a fan controller. I replaced the stock fans with Corsair 140ML fans and wired one of the intake fans in the front of the case and one of the outlet fans in the back of the case to the hotter top GPU. This allows the GPU to control the speed of those two fans. This setup is shown in the figure below. 
 <div align="center">

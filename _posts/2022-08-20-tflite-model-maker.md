@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/tflitemm_thumb.png
 title: "Building an Object Detection Model with TFLite Model Maker"
 date: 2022-08-20
-tags: deep-learning programming
-intro: "Setup and issues training an object detection model with TFLite Model Maker."
+categories: [Blog]
+tags: [deep-learning, programming]
+description: "Setup and issues training an object detection model with TFLite Model Maker."
+image: /assets/images/thumbs/tflitemm_thumb.png
+redirect_from:
+  - /2022/08/20/tflite-model-maker.html
 ---
 
 <div align="center">

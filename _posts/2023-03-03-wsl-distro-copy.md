@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/wslcopy_thumb.png
 title: "Copying a WSL Distribution"
 date: 2023-03-03
-tags: programming deep-learning
-intro: "Copying a Windows Subsystem for Linux distribution and fixing common issues."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Copying a Windows Subsystem for Linux distribution and fixing common issues."
+image: /assets/images/thumbs/wslcopy_thumb.png
+redirect_from:
+  - /2023/03/03/wsl-distro-copy.html
 ---
 
 <div align="center">

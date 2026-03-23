@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/slurm_thumb.png
 title: "Installing SLURM on Jetson Nano"
 date: 2023-04-27
-tags: programming deep-learning
-intro: "Installing SLURM on a Jetson Nano in a Turing Pi 2 cluster."
+categories: [Blog]
+tags: [programming, deep-learning]
+description: "Installing SLURM on a Jetson Nano in a Turing Pi 2 cluster."
+image: /assets/images/thumbs/slurm_thumb.png
+redirect_from:
+  - /2023/04/27/tp2-gpu-cluster.html
 ---
 
 <div align="center">

@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/tp2_case_thumb.png
 title: "Designing a Case for the Turing Pi 2"
 date: 2023-02-02
-tags: electronics 3d-printing
-intro: "Designing and building a custom acrylic case for the Turing Pi 2."
+categories: [Blog]
+tags: [electronics, 3d-printing]
+description: "Designing and building a custom acrylic case for the Turing Pi 2."
+image: /assets/images/thumbs/tp2_case_thumb.png
+redirect_from:
+  - /2023/02/02/tp2-case-build.html
 ---
 
 <p align="center">

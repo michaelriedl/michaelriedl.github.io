@@ -1,10 +1,11 @@
 ---
-layout: projectpost
-thumb: /assets/images/thumbs/poke_thumb.png
-title: "Generate Pokemon Sprites"
-date: 2022-01-16
-update: 2022-02-15
+layout: page
+title: Generate Pokemon Sprites
+permalink: /projects/pokegen/
+redirect_from:
+  - /writeups/PokeGen.html
 ---
+
 <!-- Load TensorFlow.js -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
 <!-- Load ONNX Runtime Web -->

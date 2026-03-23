@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/jetson_thumb.png
 title: "Custom ML Docker Container for Jetson Nano"
 date: 2021-09-04
-tags: electronics programming deep-learning
-intro: "Building a custom machine learning Docker container for the 2GB Jetson Nano."
+categories: [Blog]
+tags: [electronics, programming, deep-learning]
+description: "Building a custom machine learning Docker container for the 2GB Jetson Nano."
+image: /assets/images/thumbs/jetson_thumb.png
+redirect_from:
+  - /2021/09/04/jetson-nano-build.html
 ---
 
 <div align="center">

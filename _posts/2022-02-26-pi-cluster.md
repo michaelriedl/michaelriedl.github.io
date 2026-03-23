@@ -1,10 +1,12 @@
 ---
-layout: blogpost
-thumb: /assets/images/thumbs/piclust_thumb.png
 title: "Building a Raspberry Pi Cluster"
 date: 2022-02-26
-tags: raspberry-pi electronics programming
-intro: "Building a RPi cluster with Slurm Workload Manager."
+categories: [Blog]
+tags: [raspberry-pi, electronics, programming]
+description: "Building a RPi cluster with Slurm Workload Manager."
+image: /assets/images/thumbs/piclust_thumb.png
+redirect_from:
+  - /2022/02/26/pi-cluster.html
 ---
 
 <div align="center">
