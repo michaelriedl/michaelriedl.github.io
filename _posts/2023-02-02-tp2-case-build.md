@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 <p align="center">
-  <img height="300" src="/assets/images/blogs/tp2_final_build.gif">
+  <img height="300" src="/assets/images/blogs/tp2_final_build.gif" alt="Turing Pi 2 final case build">
 </p>
 
 I recently got my Turing Pi 2 from the Kickstarter campaign and needed a case for it. The custom case from the stretch goals won't we out for a while and I thought it would be better to design and make my own custom case to show off the Turing Pi 2. I decided on an acrylic and 3D printed case so that the Turing Pi 2 would be completely visible from all sides. Additionally, I already have all the materials needed to build the case from acrylic and PLA.

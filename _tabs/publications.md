@@ -25,7 +25,7 @@ P. Alexander, M. Gauthier, S. Deforte, J. Geppert, J. Ramirez, M. Riedl, J. Bick
 
 M. Riedl and S. Mukherjee. "Deep Learning QSAR Modeling for Fraction Unbound in Human Plasma." In: *The Toxicologist: Supplement to Toxicological Sciences*, Volume 186 (Issue S1), Society of Toxicology, 2022. Abstract no. 4672
 
-S. Mawalkar, P. Ravi Ganesh, J. Schuetter, M. Riedl, and S. Mishra. "Predictive Analysis of Pressure and Temperature in Carbonate Reservoirs." 16th International Conference on Greenhouse Gas Control Technologies GHGT-16, August 2022. <http://dx.doi.org/10.2139/ssrn.4283017>
+S. Mawalkar, P. Ravi Ganesh, J. Schuetter, M. Riedl, and S. Mishra. "Predictive Analysis of Pressure and Temperature in Carbonate Reservoirs." 16th International Conference on Greenhouse Gas Control Technologies GHGT-16, August 2022. <https://dx.doi.org/10.2139/ssrn.4283017>
 
 P. Alexander, S. DeForte, S. Dufek, M. Gauthier, J. Geppert, J. Ramirez, M. Riedl, W. White, J. Bickel, A. Nemati Hayati, L. Sleeper, R. Thiagarajan and K. J. Jenkins. "AI-Enabled Prediction of Bleeding in Patients Supported on Extracorporeal Membrane Oxygenation." *Circulation* 146.Suppl_1 (2022): A15673-A15673.
 
